@@ -44,7 +44,7 @@ void read(int n, int i, int x)
         scanf("%d", &x);
 
         insert(x);
-        print(x);
+        print();
     }
 }
 
