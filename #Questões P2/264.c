@@ -64,10 +64,16 @@ void Print(Node* head)
 
 int main()
 {
+    int n;
+
     Node* head = NULL;
 
-    //head = Intert | tenho que colocar um for
+    while(scanf("%d", &n) != EOF) // Ctrl + D
+    {
+        head = Insert(head, n);
+    }
 
     head = Reverse(head);
-    print(head);
+    Print(head);
+
 }
