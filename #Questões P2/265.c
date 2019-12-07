@@ -5,55 +5,58 @@
 typedef struct Node                                             //Estrutura base do nó.
 {
     int data;
+    char letter;
     struct Node* next;
 } Node;
 
 Node* head;                                                     //Variável global, pode ser acessada em qualquer lugar.
 
-void insert(char frase[], int size)                                              //Função que associa os dados
+void insert(int x, char y)                                              //Função que associa os dados
 {
-    int i;
-    for(i = 0; i < size; i++)
-    {
-        Node* temp = (Node*)malloc(sizeof(Node));                   //Criando os nós
+    Node* temp = (Node*)malloc(sizeof(Node));                   //Criando os nós
 
-        temp->data = frase[i];                                            //Associando os dados.
-        temp->next = head;                                       //Conectando os nós.
-        head = temp;
-    }
-           
+    temp->data = x;   
+    temp->letter = y;                                          //Associando os dados.
+    temp->next = head;                                          //Conectando os nós.
+    head = temp;        
 }
 
 void print()                                                    //Função que printa os dados
 {
     Node* temp = head;
 
-    printf("A Lista e: ");
-
     while(temp != NULL)                                         //Enquanto a lista não atingir o fim, continue printando.
     {
-        printf(" %c", temp->data);
+        printf("%c %d\n", temp->letter, temp->data);
         temp = temp->next;
     }
 
     printf("\n");
 }
 
-void read(char frase[])
-{
-    scanf(" %[^\n]s", frase);
-    int size = strlen(frase);
-
-    insert(frase, size);
-    print();
-    
-}
-
 int main()
 {
     head = NULL;                                                //Lista vazia.
 
-    char frase[1000];
+    int i;
+    char frase[9999];
 
-    read(frase);
+    scanf(" %[^\n]s", frase);
+
+    int asc[256] = {0};
+
+    for(i = 0; i < strlen(frase); i++)
+    {
+        asc[frase[i]]++;
+    }
+
+    for(i = 0; i < 256; i++)
+    {
+        if(asc[i] != 0)
+        {
+            insert(asc[i], i);
+        }
+    }
+
+    print();
 }
