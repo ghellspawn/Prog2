@@ -45,7 +45,7 @@ void level_order(bstNode *root)
             q.push(current->right);
         }
 
-        q.pop(); // removing the element at front;
+        q.pop(); // removing the element at front
     }
 }
 
