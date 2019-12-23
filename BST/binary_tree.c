@@ -132,10 +132,10 @@ void print_pre_order_brackets(struct binary_tree *binary_tree)
 		if (binary_tree != NULL) printf(" %d ", binary_tree->item);
 		else printf(" ()");
 		if (binary_tree->left == NULL) printf(" ()");
-		else print_pre_order(binary_tree->left);
+		else print_pre_order_brackets(binary_tree->left);
 		printf(" ");
 		if (binary_tree->right == NULL) printf(" ()");
-	 	else print_pre_order(binary_tree->right);
+	 	else print_pre_order_brackets(binary_tree->right);
 	}
 	printf(" )");
 }
