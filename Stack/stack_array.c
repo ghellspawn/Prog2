@@ -35,7 +35,5 @@ int top()
 
 int main()
 {
-
-
     return 0;
 }

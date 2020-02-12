@@ -140,7 +140,7 @@ void print_pre_order_brackets(struct binary_tree *binary_tree)
 	printf(" )");
 }
 
-struct binary_tree* create_binary_tree_brackets (struct binary_tree *binary_tree, char *input, int *i)
+struct binary_tree* create_binary_tree_brackets(struct binary_tree *binary_tree, char *input, int *i)
 {
 	if (input[(*i)++] == '(')
 	{

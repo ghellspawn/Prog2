@@ -66,5 +66,5 @@ int top_f()
 
 int main()
 {
-
+    return 0;
 }

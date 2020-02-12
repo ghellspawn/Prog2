@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "random": "c",
+        "unordered_map": "c",
+        "unordered_set": "c"
+    }
+}
